@@ -9,6 +9,7 @@ http://askubuntu.com/questions/729047/how-to-install-and-configure-appium-in-ubu
 This example is for physical android device
 
 Here (spec/support/capybara) you enter your device name (deviceName:    'your_device_name',), ('adb devices' if you do not know the name of your device), and you must have install on your device Chrome browser
+
 desired_caps_android = {
      platformName:  'Android',
      platformVersion: '4.2',
