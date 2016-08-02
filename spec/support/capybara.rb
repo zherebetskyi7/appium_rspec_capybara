@@ -5,7 +5,7 @@ Capybara.default_max_wait_time = 45
 desired_caps_android = {
      platformName:  'Android',
      platformVersion: '4.2',
-     deviceName:    '0A3C27F50D00C01A',
+     deviceName:    'your_device_name',
      browserName:   'Chrome',
 }
 
