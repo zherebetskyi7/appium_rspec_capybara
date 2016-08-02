@@ -16,6 +16,7 @@ describe 'Open dentconnect.net' do
 
 	it 'Scroll to element' do
 
+		sleep 5
 		@page = HomePage.new		
 		visit 'https://dentconnect.net/'
 		@page.button_menu.click
@@ -25,7 +26,6 @@ describe 'Open dentconnect.net' do
 		expect(page).to have_content'One universal calendar'
 		expect(page).to have_content'to schedule your patients'
 		sleep 5
-		
-	end
 
+	end
 end

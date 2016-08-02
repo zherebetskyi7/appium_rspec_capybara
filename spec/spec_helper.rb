@@ -5,31 +5,19 @@ require 'site_prism'
 require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
 require 'appium_capybara'
+require 'support/capybara'
+
+#capy_driver = Capybara.current_session.driver
 
 RSpec.configure do |config|
 
-  config.before :each do
-    desired_caps_android = {
-      platformName:  'Android',
-      platformVersion: '4.2',
-      deviceName:    '0A3C27F50D00C01A',
-      browserName:   'Chrome',
-    }
+  config.include Capybara::DSL
 
-    Capybara.register_driver(:appium) do |app|
-
-        all_options = {
-          caps:        desired_caps_android
-        }
-        Appium::Capybara::Driver.new app, all_options
+    config.before :all do
+      
     end
 
-    Capybara.default_driver = :appium
-    config.include Capybara::DSL
-
-  end
-
-  config.after :each do
+  config.after :all do
     Capybara.reset_session!
   end
 
